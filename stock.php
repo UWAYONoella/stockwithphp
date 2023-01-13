@@ -171,10 +171,6 @@ label{
     margin-left: 100px;
     background-color: whitesmoke;
 }
-.retn{
-  display: flex;
-  flex-direction: row;
-}
 </style>
 
 
@@ -255,51 +251,36 @@ label{
         </div>
 
 <div class="down">
-<div class="mid">
-<div class="rtn">
-  <div class="retn">Return Records -R-0001</div>
-<div class="cd">Return code</div>
-<br>
-<div class="ro"> R-0001</div>
- <br>
- <div class="itm">Items</div>
 
-</div>
-<div class="spl">Supplier<br>
-Supplier102
-</div>
+
+
+
+<div class="mid">
+
 
 <table class="table table-bordered">
     <thead>
       <tr>
-        <th>qty</th>
-        <th>unity</th>
-        <th>item</th>
-        <th>cost</th>
-        <th>Total</th>
+        <th>Firstname</th>
+        <th>Lastname</th>
+        <th>Email</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td></td>
-        <td></td>
+        <td>John</td>
+        <td>Doe</td>
         <td>john@example.com</td>
-        <td></td>
-        <td></td>
       </tr>
       <tr>
         <td>Mary</td>
         <td>Moe</td>
         <td>mary@example.com</td>
-        <td></td>
-        <td></td>
       </tr>
       <tr>
         <td>July</td>
         <td>Dooley</td>
         <td>july@example.com</td>
-        <td></td>
-        <td></td>
       </tr>
     </tbody>
   </table>
