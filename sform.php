@@ -125,10 +125,10 @@ a{
   width: 150px;
 }
 .hed{
-  height: 50px;
+  height: 30px;
   border-bottom: 2px solid black;
   text-align: left;
-  padding: 15px;
+  padding: 10px;
 }
 .itemss{
   color: rgb(72, 177, 226);
@@ -220,7 +220,23 @@ label{
     margin-left: 20px;
     background-color: whitesmoke;
 }
-
+button{
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    
+}
+input{
+    background-color: rgb(212, 212, 207);
+    margin-top:10px ;
+    height: 30px;
+    width: 80%;
+}
 
 </style>
 
@@ -304,55 +320,29 @@ label{
 <div class="down">
 <div class="mid">
 <div class="rtn">
- <div class="hed">List of stocks</div>
+ <div class="hed">Add New Item</div>
 </div>
- <div class="itemss"></div>
+
 <div class="tb">
-<table class="table table-bordered" border="1">
-    <thead>
-      <tr style="background-color: rgb(2, 4, 43);color:white;text-align:center;">
-      <th>No</th>
-        <th>Item Name</th>
-        <th>Supplier</th>
-        <th>Description</th>
-        <th>Available stocks</th>
-       
-      </tr>
-    </thead>
-    <tbody>
-    
-      <tr>
-        <td></td>
-        <td></td>
-        <td>john@example.com</td>
-        <td></td>
-        <td></td>
-      
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-        <td></td>
-        <td></td>
-      
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-        <td></td>
-        <td></td>
-        
-      </tr>
-    </tbody>
-  </table>
+
+<form action="" method="POST">
+
+    <input type="text" placeholder="Item Name" name="itemname">
+    <input type="text" placeholder="Supplier Name" name="suppliername">
+    <input type="text" placeholder="Description" name="desc">
+    <input type="number" placeholder="Quantity" name="qty">
+</form>
 
 </div>
 
 <div class="prin">
 
-<div class="edt"><a href="sform.php" >Add Item (+)</a></div>
+<div class="edt">
+<button type="submit">Save Item</button>
+
+
+
+</div>
 
 
 

@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 
@@ -18,7 +16,7 @@
  .adminn img{
     width: 40px;
     height: 40px;
-    border-radius: 100%;
+    border-radius: 50%;
    
     
   
@@ -80,15 +78,63 @@
   box-shadow: 1px 10px 8px 1px white;
   margin-left:2%;
   margin-top: 2%;
-  display:grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+ display: flex;
+ flex-direction: column;
+
   grid-gap: 1px;
   border-top:5px solid blue ;
   text-align: center;
   /* border: 1px solid ; */
   border-radius: 10px;
 }
-
+.prin{
+  background-color: rgba(228, 224, 224, 0.863);
+  height: 50px;
+ text-align: center;
+  gap: 5px;
+  display: flex;
+  margin-top: 10px;
+}
+.print{
+  background-color: green;
+  color: white;
+  height: 30px;
+  width: 80px;
+  margin-left: 35%;
+ 
+}
+a{
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+  
+}
+.editt{
+  background-color: blue;
+  color: white;
+  height: 30px;
+  width: 80px;
+}
+.itemm{
+  background-color: black;
+  color: white;
+  height: 30px;
+  width: 150px;
+}
+.hed{
+  height: 50px;
+  border-bottom: 2px solid black;
+  text-align: left;
+  padding: 15px;
+}
+.itemss{
+  color: rgb(72, 177, 226);
+  text-align: left;
+  padding: 15px;
+  padding-bottom: 20px;
+  font-size: 30px;
+  font-family: bold;
+}
 .men{
   background-color:white;
   height: 100px;
@@ -165,11 +211,15 @@ label{
   padding: 10px;
 }
 .table{
-    width: 700px;
+    width: 95%;
     height: 200px;
     border: 300px;
-    margin-left: 100px;
+    margin-left: 20px;
     background-color: whitesmoke;
+}
+.retn{
+  display: flex;
+  flex-direction: row;
 }
 </style>
 
@@ -184,7 +234,7 @@ label{
 
         <div class="nav">
             <div class="log">
-         <img src="p4.PNG" alt="">
+         <img src="p4.PNG" alt="" width="100" height="100">
            <div class="sta">One vision</div>
       
   
@@ -210,14 +260,14 @@ label{
               <i class="fa fa-stack-exchange" aria-hidden="true"></i><a href="stock.php"> Stock</a>
             </div>
             <div class="cont">
-              <i class="fa fa-shopping-cart" aria-hidden="true"></i><a href="sales.php"> Sale list</a>
+              <i class="fa fa-shopping-cart" aria-hidden="true"></i><a href="sales.php">Sale list</a>
             </div>
           <label>Maintenance</label>
             <div class="cont">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i> <a href="supply.php">Supplier list</a>
             </div>
             <div class="cont">
-            <i class='fa fa-text-width'></i> <a href=""> Item list</a>
+            <i class='fa fa-text-width'></i> <a href="item.php"> Item list</a>
             </div>
             <div class="cont">
           <a href="user.php"><i class='fa fa-users'></i> User list</a>
@@ -251,39 +301,60 @@ label{
         </div>
 
 <div class="down">
-
-
-
-
 <div class="mid">
-
-
-<table class="table table-bordered">
+<div class="rtn">
+ <div class="hed">Sales Record</div>
+</div>
+ <div class="itemss">Items</div>
+<div class="tb">
+<table class="table table-bordered" border="1">
     <thead>
-      <tr>
-        <th>Firstname</th>
-        <th>Lastname</th>
-        <th>Email</th>
+      <tr style="background-color: rgb(2, 4, 43);color:white;text-align:center;">
+        <th>qty</th>
+        <th>unity</th>
+        <th>item</th>
+        <th>cost</th>
+        <th>Total</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>John</td>
-        <td>Doe</td>
+        <td></td>
+        <td></td>
         <td>john@example.com</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td>Mary</td>
         <td>Moe</td>
         <td>mary@example.com</td>
+        <td></td>
+        <td></td>
       </tr>
       <tr>
         <td>July</td>
         <td>Dooley</td>
         <td>july@example.com</td>
+        <td></td>
+        <td></td>
       </tr>
     </tbody>
   </table>
+
+</div>
+
+<div class="prin">
+
+<div class="print">
+<a href="print.php">Print</a>
+</div>
+
+<div class="editt"><a href="edit.php" >Edit</a></div>
+<div class="itemm"><a href="item.php" >Back to List</a></div>
+
+
+</div>
 
 </div>
 

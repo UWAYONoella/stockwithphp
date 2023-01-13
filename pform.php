@@ -125,10 +125,10 @@ a{
   width: 150px;
 }
 .hed{
-  height: 50px;
+  height: 30px;
   border-bottom: 2px solid black;
   text-align: left;
-  padding: 15px;
+  padding: 10px;
 }
 .itemss{
   color: rgb(72, 177, 226);
@@ -220,7 +220,23 @@ label{
     margin-left: 20px;
     background-color: whitesmoke;
 }
-
+button{
+    border: none;
+    color: white;
+    font-size: 20px;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+    
+}
+input{
+    background-color: rgb(212, 212, 207);
+    margin-top:10px ;
+    height: 30px;
+    width: 80%;
+}
 
 </style>
 
@@ -304,55 +320,30 @@ label{
 <div class="down">
 <div class="mid">
 <div class="rtn">
- <div class="hed">List of stocks</div>
+ <div class="hed">Create New PO</div>
 </div>
- <div class="itemss"></div>
+
 <div class="tb">
-<table class="table table-bordered" border="1">
-    <thead>
-      <tr style="background-color: rgb(2, 4, 43);color:white;text-align:center;">
-      <th>No</th>
-        <th>Item Name</th>
-        <th>Supplier</th>
-        <th>Description</th>
-        <th>Available stocks</th>
-       
-      </tr>
-    </thead>
-    <tbody>
+
+<form action="" method="POST">
+
+    <input type="date" placeholder="Date Created" name="date">
+    <input type="text" placeholder="PO Code" name="pocode">
+    <input type="text" placeholder="Supplier" name="supplier">
+    <input type="number" placeholder="Items" name="item">
     
-      <tr>
-        <td></td>
-        <td></td>
-        <td>john@example.com</td>
-        <td></td>
-        <td></td>
-      
-      </tr>
-      <tr>
-        <td>Mary</td>
-        <td>Moe</td>
-        <td>mary@example.com</td>
-        <td></td>
-        <td></td>
-      
-      </tr>
-      <tr>
-        <td>July</td>
-        <td>Dooley</td>
-        <td>july@example.com</td>
-        <td></td>
-        <td></td>
-        
-      </tr>
-    </tbody>
-  </table>
+</form>
 
 </div>
 
 <div class="prin">
 
-<div class="edt"><a href="sform.php" >Add Item (+)</a></div>
+<div class="edt">
+<button type="submit">Create </button>
+
+
+
+</div>
 
 
 
@@ -364,7 +355,7 @@ label{
 
 <div class="fot">
 
-<div class="lft"><p>Copyright &#169 2023 All right reserved</p>  </div>
+<div class="lft"><p>Copyright &copy; 2023 All right reserved</p>  </div>
  <div class="rgt"><p>Designed by Noella</p></div>
  
 </div>
