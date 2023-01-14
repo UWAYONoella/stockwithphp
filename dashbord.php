@@ -216,6 +216,9 @@ label{
             <div class="cont">
             <i class="fa fa-cog" aria-hidden="true"></i><a href="setting.php"> Setting</a>
             </div>
+            <div class="cont">
+           <a href="index.php">Logout</a>
+            </div>
             </div>
        </div>
 
