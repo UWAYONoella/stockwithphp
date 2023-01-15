@@ -88,12 +88,12 @@
   border-radius: 10px;
 }
 .prin{
-  background-color: rgba(228, 224, 224, 0.863);
-  height: 50px;
- text-align: center;
-  gap: 5px;
+  /* background-color: rgba(228, 224, 224, 0.863);
+  height: 50px; */
+ /* text-align: center; */
+  /* gap: 5px;
   display: flex;
-  margin-top: 10px;
+  margin-top: 10px; */
 }
 .print{
   background-color: green;
@@ -222,13 +222,13 @@ label{
 }
 button{
     border: none;
-    color: white;
+    color: red;
     font-size: 20px;
 }
 form{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    margin-left: 10%;
+    margin-left: 10%; */
     
 }
 input{
@@ -325,7 +325,7 @@ input{
 
 <div class="tb">
 
-<form action="" method="POST">
+<form action="connnect.php" method="POST">
 
     <input type="date" placeholder="Date Created" name="date">
     <input type="text" placeholder="PO Code" name="pocode">
@@ -339,7 +339,7 @@ input{
 <div class="prin">
 
 <div class="edt">
-<button type="submit">Create </button>
+<button type="submit" name="create">Create </button>
 
 
 
