@@ -332,9 +332,10 @@ input{
     <input type="text" placeholder="Supplier" name="supplier">
     <input type="number" placeholder="Items" name="item">
     
-</form>
 
-</div>
+   
+
+
 
 <div class="prin">
 
@@ -342,13 +343,13 @@ input{
 <button type="submit" name="create">Create </button>
 
 
-
 </div>
 
 
 
 </div>
-
+</form>
+</div>
 
 
 </div>

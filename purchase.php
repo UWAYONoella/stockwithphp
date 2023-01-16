@@ -365,6 +365,18 @@ label{
     </tbody>
   </table>
 
+<?php
+
+
+if(isset($_SESSION['success'])) {
+  $message = $_SESSION['success'];
+  unset($_SESSION['success']);
+  echo $message;
+}
+
+
+
+?>
 </div>
 
 
