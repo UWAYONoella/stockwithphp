@@ -8,7 +8,7 @@ else{
 
   $counter = "";
   $records = array();
-  $sql = "SELECT * FROM purchase";
+  $sql = "SELECT * FROM users";
   $result = mysqli_query($con, $sql);
   if($result){
     while($rows=$result->fetch_object()){
@@ -363,8 +363,8 @@ button{
 <div class="down">
 <div class="mid">
 <div class="rtn">
- <div class="hed">List of Purchase Order </div>
- <div class="edt"><a href="pform.php" > + Create New</a></div>
+ <div class="hed">List of Users</div>
+ <div class="edt"><a href="uform.php" > + Add user</a></div>
 </div>
  <div class="itemss"></div>
 <div class="tb">
@@ -372,11 +372,9 @@ button{
     <thead>
       <tr style="background-color: rgb(2, 4, 43);color:white;text-align:center;">
       <th>No</th>
-        <th>Date Created</th>
-        <th>PO Code</th>
-        <th>Supplier</th>
-        <th>Items</th>
-     
+        <th>Full Name</th>
+        <th>Email</th>
+        <th>Password</th>
         <th>Action</th>
        
       </tr>
@@ -388,13 +386,11 @@ foreach($records as $key){
 ?>
 
 <tr>
-<td> <?php echo $key->id  ?></td>
-<td> <?php echo $key->datecreated  ?></td>
-<td> <?php echo $key->pcode  ?></td>
-<td> <?php echo $key->supplier  ?></td>
-<td> <?php echo $key->items  ?></td>
-
-<td><button type="submit" name="update" class="update">Update</button><button type="submit" name="delete" class="delete">Delete</button></td>
+<td> <?php echo $key->No  ?></td>
+<td> <?php echo $key->fname  ?></td>
+<td> <?php echo $key->email  ?></td>
+<td> <?php echo $key->pasword  ?></td>
+<td><button type="submit" name="delete" class="delete">Delete</button></td>
 
 </tr>
 
