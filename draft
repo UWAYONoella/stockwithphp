@@ -1,0 +1,23 @@
+<?php
+$con = mysqli_connect('localhost', 'root','','stock');
+if(!$con){
+  echo "Not connected";
+
+}
+else{
+
+  $counter = "";
+  $records = array();
+  $sql = "SELECT * FROM purchase";
+  $result = mysqli_query($con, $sql);
+  if($result){
+    while($rows=$result->fetch_object()){
+      $records[] = $rows;
+    }
+  }
+
+}
+
+
+
+?>

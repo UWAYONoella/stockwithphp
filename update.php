@@ -1,6 +1,31 @@
+<?php
+$con = mysqli_connect('localhost', 'root', '', 'stock');
+
+if($con){
+    echo "Database  well connected";
+}
+
+$id = $_GET['updateid'];
+
+if(isset($_POST['update'])){
+    $date = $_POST['date'];
+    $pocode = $_POST['pocode'];
+    $supplier= $_POST['supplier'];
+    $item = $_POST['item'];
+
+    $sqry = "UPDATE purchase set id=$id ,datecreated='$date',pcode='$pocode',supplier='$supplier',items='$item' where id=$id";
+
+    if($result){
+        $_SESSION['success'] = "update ordered";
+         include("purchase.php");
+
+    }else{
+        echo "There is error";
+    }
+}
 
 
-
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -92,12 +117,12 @@
   border-radius: 10px;
 }
 .prin{
-  background-color: rgba(228, 224, 224, 0.863);
-  height: 50px;
- text-align: center;
-  gap: 5px;
+  /* background-color: rgba(228, 224, 224, 0.863);
+  height: 50px; */
+ /* text-align: center; */
+  /* gap: 5px;
   display: flex;
-  margin-top: 10px;
+  margin-top: 10px; */
 }
 .print{
   background-color: green;
@@ -118,10 +143,9 @@ a{
   color: white;
   height: 30px;
   width: 130px;
-  
+  margin-left: 35%;
   padding-top: 10px;
   margin-top: 4px;
-  margin-left: 30%;
 }
 .itemm{
   background-color: black;
@@ -130,16 +154,10 @@ a{
   width: 150px;
 }
 .hed{
-  height: 50px;
-  /* border-bottom: 2px solid black; */
+  height: 30px;
+  border-bottom: 2px solid black;
   text-align: left;
-  padding: 15px;
-  width: 50%;
-}
-.rtn{
-  display: flex;
-  /* width: 50%; */
- 
+  padding: 10px;
 }
 .itemss{
   color: rgb(72, 177, 226);
@@ -231,31 +249,22 @@ label{
     margin-left: 20px;
     background-color: whitesmoke;
 }
-tr{
-  text-align: center;
-}
 button{
-  margin: 5px;
-  color: white;
-  /* padding-leff: 10px; */
+    border: none;
+    color: red;
+    font-size: 20px;
 }
-.delete{
-  color: white;
-  background-color: red;
-  border: none;
-  height: 30px;
-  width: 100px;
-  border-radius: 5px;
-  font-size: 25px;
+form{
+    /* display: flex;
+    flex-direction: column;
+    margin-left: 10%; */
+    
 }
-.update{
-  color: white;
-  background-color: green;
-  border: none;
-  height: 30px;
-  width: 100px;
-  border-radius: 5px;
-  font-size: 25px;
+input{
+    background-color: rgb(212, 212, 207);
+    margin-top:10px ;
+    height: 30px;
+    width: 80%;
 }
 
 </style>
@@ -340,106 +349,43 @@ button{
 <div class="down">
 <div class="mid">
 <div class="rtn">
- <div class="hed">List of Purchase Order </div>
- <div class="edt"><a href="pform.php" > + Create New</a></div>
+ <div class="hed">Create New PO</div>
 </div>
- <div class="itemss"></div>
+
 <div class="tb">
-<table class="table table-bordered" border="1">
-    <thead>
-      <tr style="background-color: rgb(2, 4, 43);color:white;text-align:center;">
-      <th>No</th>
-        <th>Date Created</th>
-        <th>PO Code</th>
-        <th>Supplier</th>
-        <th>Items</th>
-     
-        <th>Action</th>
-       
-      </tr>
-    </thead>
-    <tbody>
-    <?php
-$con = mysqli_connect('localhost', 'root','','stock');
-if(!$con){
-  echo "Not connected";
 
-}else{
+<form action="connnect.php" method="POST">
 
-      $sql = "SELECT * FROM purchase";
-      $result = mysqli_query($con, $sql);
-      if($result){
+    <input type="date" placeholder="Date Created" name="date">
+    <input type="text" placeholder="PO Code" name="pocode">
+    <input type="text" placeholder="Supplier" name="supplier">
+    <input type="number" placeholder="Items" name="item">
+    
 
-while($row=mysqli_fetch_assoc($result)){
-          $id = $row['id'];
-          $datecreated = $row['datecreated'];
-          $pcode = $row['pcode'];
-          $supplier = $row['supplier'];
-          $items = $row['items'];
-
-          echo '
-          <tr>
-          <td>'.$id.'</td>
-          <td>'.$datecreated.'</td>
-          <td>'.$pcode.'</td>
-          <td>'.$supplier.'</td>
-          <td>'. $items.'</td>
-          <td><button type="submit" name="update" class="update"><a href="update.php?updateid='.$id.'">Update</a></button>
-
-<button type="submit" name="delete" class="delete"><a href="delete.php?deleteid='.$id.'">Delete</a></button></td>
-
-</td>
-          </tr>
-          
-          
-
-
-';
-
-         
-}
-
-      }
-    }
-
-
-?>
+   
 
 
 
+<div class="prin">
+
+<div class="edt">
+<button type="submit" name="update">Update</button>
 
 
-
-
-
-    </tbody>
-
-
-
-  </table>
-
-<?php
-
-
-if(isset($_SESSION['success'])) {
-  $message = $_SESSION['success'];
-  unset($_SESSION['success']);
-  echo $message;
-}
-
-
-
-?>
 </div>
 
 
+
+</div>
+</form>
+</div>
 
 
 </div>
 
 <div class="fot">
 
-<div class="lft"><p>Copyright &#169 2023 All right reserved</p>  </div>
+<div class="lft"><p>Copyright &copy; 2023 All right reserved</p>  </div>
  <div class="rgt"><p>Designed by Noella</p></div>
  
 </div>
