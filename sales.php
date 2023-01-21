@@ -262,7 +262,7 @@ label{
             <div class="cont">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i><a href="sales.php">Sale list</a>
             </div>
-          <label>Maintenance</label>
+         
             <div class="cont">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i> <a href="supply.php">Supplier list</a>
             </div>

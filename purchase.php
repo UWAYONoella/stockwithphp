@@ -17,6 +17,19 @@
 <style>
 
 
+.sta{
+  padding-left: 30px;
+}
+.log img{
+  width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    padding:20px;
+}
+.log{
+  background-color: rgb(12, 102, 72);
+}
+
  .adminn img{
     width: 40px;
     height: 40px;
@@ -299,7 +312,7 @@ button{
             <div class="cont">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i><a href="sales.php"> Sale list</a>
             </div>
-          <label>Maintenance</label>
+         
             <div class="cont">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i> <a href="supply.php">Supplier list</a>
             </div>
@@ -401,13 +414,19 @@ while($row=mysqli_fetch_assoc($result)){
 
       }
     }
-
+    $re = mysqli_query($con, 'SELECT SUM(items) AS value_sum FROM purchase'); 
+    $rows = mysqli_fetch_assoc($re); 
+    $sum = $rows['value_sum'];
+    
 
 ?>
 
 
 
+<tr>
+<td colspan="4" >Sum of Items</td><td ><?php echo $sum; ?> </td><td></td>
 
+</tr>
 
 
 
@@ -426,7 +445,6 @@ if(isset($_SESSION['success'])) {
   unset($_SESSION['success']);
   echo $message;
 }
-
 
 
 ?>

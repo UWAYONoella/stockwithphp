@@ -15,12 +15,7 @@ input::placeholder {
     width: 100%;
     height: 100vh;
     overflow: hidden;
-}
-
-.log {
-    background-color: rgb(15, 15, 107);
-    height: 15%;
-    color: white;
+    background-color: rgb(12, 102, 72);
 }
 
 .sta {

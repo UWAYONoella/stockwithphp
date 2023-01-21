@@ -14,7 +14,7 @@ if(isset($_POST['update'])){
     $item = $_POST['item'];
 
     $sqry = "UPDATE purchase set id=$id ,datecreated='$date',pcode='$pocode',supplier='$supplier',items='$item' where id=$id";
-
+  $result = mysqli_query($con, $sqry);
     if($result){
         $_SESSION['success'] = "update ordered";
          include("purchase.php");
@@ -22,9 +22,13 @@ if(isset($_POST['update'])){
     }else{
         echo "There is error";
     }
+
+ 
+
 }
 
-
+$result =mysqli_query($con,"SELECT * FROM purchase where id=$id");
+$row = mysqli_fetch_array($result);
 ?>
 
 <!DOCTYPE html>
@@ -47,9 +51,8 @@ if(isset($_POST['update'])){
     height: 40px;
     border-radius: 100%;
    
-    
-  
 }
+
 
 #lang{
   border:none;
@@ -67,7 +70,7 @@ if(isset($_POST['update'])){
 }
 .adminn{
   background:white;
-  /* margin-top:20px; */
+ 
   width:240px;
   height:40px;
   border-radius:20px;
@@ -113,17 +116,10 @@ if(isset($_POST['update'])){
   grid-gap: 1px;
   border-top:5px solid blue ;
   text-align: center;
-  /* border: 1px solid ; */
+ 
   border-radius: 10px;
 }
-.prin{
-  /* background-color: rgba(228, 224, 224, 0.863);
-  height: 50px; */
- /* text-align: center; */
-  /* gap: 5px;
-  display: flex;
-  margin-top: 10px; */
-}
+
 .print{
   background-color: green;
   color: white;
@@ -254,19 +250,37 @@ button{
     color: red;
     font-size: 20px;
 }
-form{
-    /* display: flex;
-    flex-direction: column;
-    margin-left: 10%; */
-    
-}
+
 input{
     background-color: rgb(212, 212, 207);
     margin-top:10px ;
     height: 30px;
     width: 80%;
 }
-
+.sta{
+  padding-left: 30px;
+}
+.log img{
+  width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    padding:20px;
+}
+.log{
+  background-color: rgb(12, 102, 72);
+}
+.sta{
+  padding-left: 30px;
+}
+.log img{
+  width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    padding:20px;
+}
+.log{
+  background-color: rgb(12, 102, 72);
+}
 </style>
 
 
@@ -308,7 +322,7 @@ input{
             <div class="cont">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i><a href="sales.php"> Sale list</a>
             </div>
-          <label>Maintenance</label>
+         
             <div class="cont">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i> <a href="supply.php">Supplier list</a>
             </div>
@@ -349,17 +363,17 @@ input{
 <div class="down">
 <div class="mid">
 <div class="rtn">
- <div class="hed">Create New PO</div>
+ <div class="hed">Update PO</div>
 </div>
 
 <div class="tb">
 
-<form action="connnect.php" method="POST">
+<form action="" method="POST">
 
-    <input type="date" placeholder="Date Created" name="date">
-    <input type="text" placeholder="PO Code" name="pocode">
-    <input type="text" placeholder="Supplier" name="supplier">
-    <input type="number" placeholder="Items" name="item">
+    <input type="date" placeholder="Date Created" name="date" value="<?php echo $row['datecreated'];?>">
+    <input type="text" placeholder="PO Code" name="pocode" value="<?php echo $row['pcode']; ?>">
+    <input type="text" placeholder="Supplier" name="supplier" value="<?php echo $row['supplier']; ?>">
+    <input type="number" placeholder="Items" name="item" value="<?php echo $row['items']; ?>">
     
 
    

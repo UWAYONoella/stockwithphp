@@ -1,3 +1,19 @@
+<?php
+$con = mysqli_connect('localhost', 'root', '', 'stock');
+$sql="select count(*) as total from purchase";
+$result=mysqli_query($con,$sql);
+$data=mysqli_fetch_assoc($result);
+
+
+$users="select count(*) as urs from users";
+$rusers=mysqli_query($con,$users);
+$datausers=mysqli_fetch_assoc($rusers);
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,6 +178,19 @@ label{
   text-align: right;
   padding: 10px;
 }
+
+.sta{
+  padding-left: 30px;
+}
+.log img{
+  width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    padding:20px;
+}
+.log{
+  background-color: rgb(12, 102, 72);
+}
 </style>
 
 
@@ -203,7 +232,7 @@ label{
             <div class="cont">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i><a href="sales.php"> Sale list</a>
             </div>
-          <label>Maintenance</label>
+          
             <div class="cont">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i> <a href="supply.php">Supplier list</a>
             </div>
@@ -261,10 +290,10 @@ label{
 <div class="men">
 <i class="fa fa-exchange" aria-hidden="true" style="background-color:blue;"></i><a href="#">BO Records</a><p>3</p></div>
 <div class="men">
-<i class='fa fa-book'  style=" background-color:  rgb(32, 138, 138);"></i> <a href="">purchase order</a><p>3</p></div>
+<i class='fa fa-book'  style=" background-color:  rgb(32, 138, 138);"></i> <a href="">purchase order</a><p><p><?php echo $data['total']; ?></p></div>
 <div class="men">
 <i class='fa fa-undo' style="background-color:red;"></i><a href=""> Return list</a><p>3</p></div>
-<div class="men"><a href=""><i class='fa fa-users' style="background-color:green;"></i> Users</a><p>3</p></div>
+<div class="men"><a href=""><i class='fa fa-users' style="background-color:green;"></i> Users</a><p><?php echo $datausers['urs']   ?></p></div>
 
 
 

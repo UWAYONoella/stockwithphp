@@ -21,6 +21,18 @@
     
   
 }
+.sta{
+  padding-left: 30px;
+}
+.log img{
+  width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    padding:20px;
+}
+.log{
+  background-color: rgb(12, 102, 72);
+}
 
 #lang{
   border:none;
@@ -279,7 +291,7 @@ input{
             <div class="cont">
               <i class="fa fa-shopping-cart" aria-hidden="true"></i><a href="sales.php"> Sale list</a>
             </div>
-          <label>Maintenance</label>
+         
             <div class="cont">
               <i class="fa fa-shopping-bag" aria-hidden="true"></i> <a href="supply.php">Supplier list</a>
             </div>
